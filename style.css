@@ -1,0 +1,127 @@
+/* CSS files add styling rules to your content */
+body {
+  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  margin: 0em;
+}
+
+h1 {
+  font-style: italic;
+  color: white;
+}
+
+#controls {
+  position: absolute;
+  bottom: 0;
+  margin: 1em;
+}
+
+#recordMessage {
+  display: none;
+}
+
+#downloads {
+  display: none; 
+}
+
+.snackbar {
+  display: flex;
+  position:fixed;
+  bottom: 0;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  padding-right: 24px;
+  padding-left: 24px;
+  pointer-events: none;
+  will-change: transform;
+  background-color: #323232;
+  color: #fff;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.snackbar__text {
+  font-family: Roboto,sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  letter-spacing: .03125em;
+  text-decoration: inherit;
+  text-transform: inherit;
+  margin-left: 0;
+  margin-right: auto;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 48px;
+  color: #fff;
+}
+
+.snackbar__action {
+  color: #018786;
+  font-family: Roboto,sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: .875rem;
+  line-height: 2.25rem;
+  font-weight: 500;
+  letter-spacing: .08929em;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding-left: 24px;
+}
+
+@media screen and (max-width: 590px) {
+  .snackbar {
+    width: 100%;
+    left: 0;
+    transform: none;
+  }
+}
+
+#downloads {}
+
+video, canvas {
+  width: 100%;
+  box-sizing: border-box;
+  object-fit: cover;
+}
+
+button {
+  margin: 1em;
+  padding: 1em;
+  border-radius: 28px;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 56px;
+  height: 56px;
+  padding: 0; 
+  background-color: #018786;
+  color: #fff;
+  border: none;
+}
+
+button[disabled] {
+  display: none;
+}
+
+button[disabled=false] {
+  display: inline-flex;
+}
+
+button:not([disabled]) {
+  display: inline-flex;;
+}
+
+#bufferVideo {
+  display: none; 
+}
