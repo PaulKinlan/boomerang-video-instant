@@ -1,7 +1,8 @@
 /* CSS files add styling rules to your content */
-body {
+html, body {
   font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
   margin: 0em;
+  height: 100%;
 }
 
 h1 {
@@ -9,10 +10,18 @@ h1 {
   color: white;
 }
 
-#controls {
+#footer {
   position: absolute;
+  width:100%;
   bottom: 0;
-  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#controls {
+  text-align: right; 
 }
 
 #recordMessage {
@@ -25,19 +34,16 @@ h1 {
 
 .snackbar {
   display: flex;
-  position:fixed;
   bottom: 0;
   align-items: center;
   justify-content: flex-start;
   box-sizing: border-box;
   padding-right: 24px;
   padding-left: 24px;
-  pointer-events: none;
   will-change: transform;
   background-color: #323232;
   color: #fff;
-  left: 50%;
-  transform: translate(-50%);
+  margin: auto;
 }
 
 .snackbar__text {
@@ -71,6 +77,7 @@ h1 {
   text-decoration: none;
   text-transform: uppercase;
   padding-left: 24px;
+  pointer-events: all;
 }
 
 @media screen and (max-width: 590px) {
@@ -79,23 +86,30 @@ h1 {
     left: 0;
     transform: none;
   }
+  
+  button {
+    position: relative !important;
+  }
 }
 
 #downloads {}
 
 video, canvas {
   width: 100%;
+  height: 100%;
   box-sizing: border-box;
   object-fit: cover;
 }
 
 button {
-  margin: 1em;
+  margin: 0em 3em 3em 0em;
   padding: 1em;
   border-radius: 28px;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  right:0;
   -ms-flex-align: center;
   align-items: center;
   -ms-flex-pack: center;
@@ -108,6 +122,17 @@ button {
   background-color: #018786;
   color: #fff;
   border: none;
+  pointer-events: all;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+  transition: box-shadow .28s cubic-bezier(.4,0,.2,1),opacity 15ms linear 30ms,transform .27s cubic-bezier(0,0,.2,1) 0ms,-webkit-box-shadow .28s cubic-bezier(.4,0,.2,1),-webkit-transform .27s cubic-bezier(0,0,.2,1) 0ms;
+}
+
+button:hover {
+  box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12); 
+}
+
+button:active {
+  box-shadow: 0 7px 8px -4px rgba(0,0,0,.2), 0 12px 17px 2px rgba(0,0,0,.14), 0 5px 22px 4px rgba(0,0,0,.12); 
 }
 
 button[disabled] {

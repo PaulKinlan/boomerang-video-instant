@@ -76,13 +76,18 @@ const init = async () => {
     bufferVideo.onloadedmetadata = () => {
       width = bufferVideo.videoWidth;
       height = bufferVideo.videoHeight;
+      
+      let screenRatio = innerWidth / innerHeight;
+      let videoRatio = width / height;
+      // We need to map the video to the screen ratio.
+      //playbackVideo.style.transform = `scale(${videoRatio})`;
 
       playbackVideo.width = width;
       playbackVideo.height = height;
 
       canvasOutput.width = width;
       canvasOutput.height = height;
-      
+        
       recordMessage.style.display = 'inline-flex';
       setTimeout(() => {
         recordMessage.style.display = 'none';
@@ -114,6 +119,10 @@ const init = async () => {
   let startRecording = async () => {
     recording = true;
     frames = [];
+    
+    downloads.style.display = 'none';
+    recordMessage.style.display = 'none';
+    
     rec.start(10);
   }
     
