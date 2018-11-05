@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bomerang!</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/comlinkjs@3.0.2/umd/comlink.js" async></script>
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    <script src="script.js" async></script>
+  </head>  
+  <body>
+    <video id="bufferVideo" autoplay></video>
+    <video id="playbackVideo" autoplay></video>
+    <br />
+    <div id=controls>
+      <button id="captureBtn">Get Camera</button>
+      <button id="toggleBtn" disabled>Toggle</button>
+    </div>
+    
+    <div id=recordMessage class=snackbar>
+      <span class=snackbar__text>Tap the screen to start recording.</span>
+    </div>
+    
+    <div id=downloads class=snackbar>
+      <span class=snackbar__text>Video Ready</span>
+      <a id="download" href="#" class=snackbar__action>Download</a>
+    </div>
+    <canvas id="output" style="display: none;"></canvas>
+  </body>
+</html>
